@@ -1,0 +1,20 @@
+pins.digitalWritePin(DigitalPin.P0, 1)
+basic.pause(5000)
+pins.digitalWritePin(DigitalPin.P0, 0)
+basic.pause(5000)
+for (let index = 0; index < 4; index++) {
+    pins.digitalWritePin(DigitalPin.P2, 1)
+    basic.pause(5000)
+    pins.digitalWritePin(DigitalPin.P2, 0)
+}
+basic.pause(5000)
+pins.digitalWritePin(DigitalPin.P1, 1)
+music.playMelody("C5 B A G F E D C ", 120)
+music.setVolume(255)
+basic.pause(5000)
+music.playMelody("- - - - - - - - ", 0)
+basic.pause(5000)
+pins.digitalWritePin(DigitalPin.P1, 0)
+basic.forever(function () {
+    led.enable(true)
+})
